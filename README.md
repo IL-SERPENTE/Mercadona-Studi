@@ -1,3 +1,3 @@
 # _PROJET D'ÉTUDE STUDI_
 
-## _Projet Marcadona_
+## _Projet Mercadona_
