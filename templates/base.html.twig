@@ -1,18 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
+        <title>{% block title %}{% endblock %}</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}{% endblock %}
+
+        {% block javascripts %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <nav class="navbar navbar-expend-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="./">Accueil</a>
+                    {% if app.user %}
+                    <li class="nav-item">
+                        <span class="nav-link">Bienvenu test</span>
+                    </li>
+                    {% endif %}
+                    {% if app.user %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Deconnexion</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item {{ app.request.get('_route') == 'app_login' ? 'active':'' }}">
+                        <a class="nav-link" href="{{ path('app_login') }}">Connexion</a>
+                    </li>
+                    {% endif %}
+        </nav>
+
+        <div class="container-fluid">
+            {% block body %}{% endblock %}
+        </div>
+
+        {% block scripts %}
+            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+            <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js" integrity="sha512-TPh2Oxlg1zp+kz3nFA0C5vVC6leG/6mm1z9+mA81MI5eaUVqasPLO8Cuk4gMF4gUfP5etR73rgU/8PNMsSesoQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        {% endblock %}
     </body>
 </html>
