@@ -18,6 +18,12 @@ class Admin implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 180, unique: true)]
     private ?string $email = null;
 
+    #[ORM\Column(length: 180)]
+    private ?string $name = null;
+
+    #[ORM\Column(length: 180)]
+    private ?string $surname = null;
+
     #[ORM\Column]
     private array $roles = [];
 
@@ -92,6 +98,26 @@ class Admin implements UserInterface, PasswordAuthenticatedUserInterface
     public function setPassword(string $password): static
     {
         $this->password = $password;
+
+        return $this;
+    }
+
+    public function getName(): string {
+        return $this->name;
+    }
+
+    public function setName(string $name): static {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    public function getSurname(): string {
+       return $this->surname;
+    }
+
+    public function setSurname(string $surname): static {
+        $this->surname = $surname;
 
         return $this;
     }
