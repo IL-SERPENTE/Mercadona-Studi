@@ -29,6 +29,9 @@ class Product
     #[ORM\Column(length: 255)]
     private ?string $categorie = null;
 
+    #[ORM\OneToOne(mappedBy: 'productID', cascade: ['persist', 'remove'])]
+    private ?Promotion $promotion = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -90,6 +93,28 @@ class Product
     public function setCategorie(string $categorie): static
     {
         $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    public function getPromotion(): ?Promotion
+    {
+        return $this->promotion;
+    }
+
+    public function setPromotion(?Promotion $promotion): static
+    {
+        // unset the owning side of the relation if necessary
+        if ($promotion === null && $this->promotion !== null) {
+            $this->promotion->setProductID(null);
+        }
+
+        // set the owning side of the relation if necessary
+        if ($promotion !== null && $promotion->getProductID() !== $this) {
+            $promotion->setProductID($this);
+        }
+
+        $this->promotion = $promotion;
 
         return $this;
     }
