@@ -4,6 +4,16 @@
 
 {% block body %}
 
-{{ number }}
+    <ul>
+    {% for product in products %}
+        <li>
+            {{ product.libelle }}
+            {{ product.description }}
+            {{ product.prix }}
+            {{ product.image }}
+            {{ product.categorie }}
+        </li>
+    {% endfor %}
+    </ul>
 
 {% endblock %}
