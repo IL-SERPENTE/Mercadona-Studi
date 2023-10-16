@@ -11,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\Validator\Constraints\Image;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\NotNull;
@@ -22,54 +23,55 @@ class NewProductType extends AbstractType
         $builder
             // Libelle du produit
             ->add('libelle', TextType::class, [
-                'mapped' => false,
+                'label' => 'Nom du produit : ',
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Ce champ ne peut être vide'
+                        'message' => 'Ce champ ne peut être vide',
                     ])
-                ]
+                ],
             ])
 
             // Description du produit
             ->add('description', TextareaType::class, [
-                'mapped' => false,
+                'label' => 'Decription : ',
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Ce champ ne peut être vide'
+                        'message' => 'Ce champ ne peut être vide',
                     ])
-                ]
+                ],
             ])
 
             // Prix du produit
             ->add('prix', NumberType::class, [
-                'mapped' => false,
+                'label' => 'Prox du produit : ',
                 'constraints' => [
                     new NotNull([
-                        'message' => 'Le prix du  produit ne peut être null'
+                        'message' => 'Le prix du  produit ne peut être null',
                     ])
 
-                ]
+                ],
             ])
 
             // Ajout d'une image pour le produit
             ->add('image', FileType::class, [
-                'mapped' => false,
+                'label' => 'Image du produit : ',
                 'constraints' => [
-                    new NotNull([
+                    /*new NotBlank([
                         'message' => 'Veuillez importer une image pour le produit'
-                    ]),
-                    new Image([
+                    ]),*/
+                    new File([
                         'mimeTypes' => [
-                            '.png'
+                            'image/jpeg',
+                            'image/png',
                         ],
-                        'mimeTypesMessage' => 'test'
+                        'mimeTypesMessage' => 'Seuls les fichiers { types } sont accepté !'
                     ])
-                ]
+                ],
             ])
 
             // Categorie du produit
             ->add('categorie', TextType::class, [
-                'mapped' => false
+                'label' => 'Catégorie du produit : '
             ])
         ;
     }

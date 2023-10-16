@@ -11,17 +11,23 @@
     </div>
 
     <div class="container">
-       <form method="post">
-           <label for="new_product_libelle">Nom du produit : </label>
-           {{ form_widget(form.libelle) }}
-           <label for="new_product_description">Description : </label>
-           {{ form_widget(form.description) }}
-           <label for="new_product_prix">Prix du produit : </label>
-           {{ form_widget(form.prix) }}
-           <label for="new_product_image">Image du produit : </label>
+       <form method="post" enctype="multipart/form-data">
+           {{ form_label(form.libelle) }}
+           {{ form_widget(form.libelle, {'attr' :{'placeholder': 'Nom du produit'}}) }}
+           <br>
+           {{ form_label(form.description) }}
+           {{ form_widget(form.description, {'attr': {'placeholder': 'Description du produit...'}}) }}
+           <br>
+           {{ form_label(form.prix) }}
+           {{ form_widget(form.prix, {'attr': {'placeholder': 'Prix du produit'}}) }}
+           <br>
+           {{ form_label(form.image) }}
            {{ form_widget(form.image) }}
-           <label for="new_product_categorie">Catégorie du produit</label>
-           {{ form_widget(form.categorie) }}
+           <br>
+           {{ form_label(form.categorie) }}
+           {{ form_widget(form.categorie, {'attr': {'placeholder': 'Catégorie du produit'}}) }}
+           <br>
+           {{ form_rest(form) }}
            <button class="btn btn-lg btn-primary" type="submit">Créer le produit</button>
        </form>
     </div>
