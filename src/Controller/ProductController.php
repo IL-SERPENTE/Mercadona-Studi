@@ -17,7 +17,7 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 class ProductController extends AbstractController
 {
     // Création du produit et ajout en BDD
-    #[Route('/product', name:'new_product')]
+    #[Route('/admin/product', name:'new_product')]
     public function createProduct(Request $request, SluggerInterface $slugger): Response {
         // Entity manager de symfony
         $em = $this->getDoctrine()->getManager();
