@@ -20,7 +20,7 @@ class HomeController extends AbstractController {
         ]);
     }
 
-    #[Route('/{category}')]
+    #[Route('catalog/{category}')]
     public function catalogCategory(string $category) {
         $em = $this->getDoctrine()->getManager();
         $products = $em->getRepository(Product::class)->findBy(array('categorie' => $category));
