@@ -19,4 +19,14 @@ class HomeController extends AbstractController {
             'products' => $products
         ]);
     }
+
+    #[Route('/{category}')]
+    public function catalogCategory(string $category) {
+        $em = $this->getDoctrine()->getManager();
+        $products = $em->getRepository(Product::class)->findBy(array('categorie' => $category));
+
+        return $this->render('home/index.html.twig', [
+            'products' => $products
+        ]);
+    }
 }
