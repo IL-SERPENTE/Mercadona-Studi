@@ -32,7 +32,11 @@ security:
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
-        - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin/promotion/{id}, roles: ROLE_ADMIN }
+        - { path: ^/admin/product, roles: ROLE_ADMIN}
+        - { path: ^/admin/product/{id}, roles: ROLE_ADMIN}
+        # - { path: ^/catalog/{category}, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+
 
 when@test:
     security:

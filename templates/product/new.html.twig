@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer un produit{% endblock %}
+
+{% block body %}
+
+    <!--div class="container"-->
+       <form method="post" enctype="multipart/form-data" class="newProduct">
+           <div class="clearfix">
+               <h1 class="page-header">Créer un nouveau produit</h1>
+           </div>
+           <div class="clearfix">
+               {{ form_label(form.libelle) }}
+               {{ form_widget(form.libelle) }}
+           </div>
+           <div class="clearfix">
+               {{ form_label(form.description) }}
+               {{ form_widget(form.description) }}
+           </div>
+           <div class="clearfix">
+               {{ form_label(form.prix) }}
+               {{ form_widget(form.prix) }}
+           </div>
+           <div class="clearfix">
+               {{ form_label(form.image) }}
+               {{ form_widget(form.image) }}
+           </div>
+           <div class="clearfix">
+               {{ form_label(form.categorie) }}
+               {{ form_widget(form.categorie, {'attr': {'placeholder': 'Catégorie du produit'}}) }}
+           </div>
+           <div class="clearfix">
+               {{ form_rest(form) }}
+               <button class="btn btn-lg btn-primary" type="submit">Créer le produit</button>
+           </div>
+       </form>
+    <!--/div-->
+
+{% endblock %}

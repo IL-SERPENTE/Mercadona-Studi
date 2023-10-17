@@ -17,6 +17,7 @@ class LoginAdminType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class, [
+                'label' => "email",
                 'mapped' => false,
                 'constraints' => [
                     new NotBlank(['message' => "Ce champ ne peut être vide"]),
@@ -28,6 +29,7 @@ class LoginAdminType extends AbstractType
                 ],
             ])
             ->add('password', PasswordType::class, [
+                'label' => 'Mot de passe',
                 'mapped' => false,
                 'constraints' => [
                     new NotBlank([
