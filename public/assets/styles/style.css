@@ -2,6 +2,11 @@ body {
     background-color: lightgray;
 }
 
+.promo {
+    color: red;
+    font-weight: bold;
+}
+
 /* DEBUT DES REGLAGES DU BLOC CONNECXION */
 
 .connection {

@@ -12,7 +12,12 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ product.libelle }}</h5>
                     <p class="card-text">{{ product.description|nl2br }}</p>
-                    <p class="card-text">{{ product.prix }}</p>
+                    {% if product.promotion and ("now"|date('d-m-Y') >= product.promotion.dateDebut|date('d-m-Y') and
+                        "now"|date('d-m-Y') <= product.promotion.dateFin|date('d-m-Y')) %}
+                        <p class="card-text promo">{{ (product.prix-(product.prix*product.promotion.pourcentageRemise/100))|number_format(2, '.') }} €</p>
+                    {% else %}
+                        <p class="card-text">{{ product.prix }} €</p>
+                    {% endif %}
                     <p class="card-text">{{ product.categorie }}</p>
                 </div>
             </div>
