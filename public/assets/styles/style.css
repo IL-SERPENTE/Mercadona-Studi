@@ -1,3 +1,198 @@
 body {
     background-color: lightgray;
 }
+
+/* DEBUT DES REGLAGES DU BLOC CONNECXION */
+
+.connection {
+    font-family: 'Ubuntu', 'Lato', sans-serif;
+    font-weight: 400;
+    /* Size and position */
+    width: 20%;
+    margin: 20rem 50rem;
+    padding: 10px;
+    overflow: hidden;
+    position: absolute;
+    /*z-index: 2;
+
+    /* Styles */
+    background: #111;
+    border-radius: 0.4em;
+    border: 1px solid #191919;
+    box-shadow:
+            inset 0 0 2px 1px rgba(255,255,255,0.08),
+            0 16px 10px -8px rgba(0, 0, 0, 0.6);
+}
+
+.header-page {
+    width: 100%;
+    padding-top: 9px;
+    padding-bottom: 9px;
+
+    color: #bbb;
+    letter-spacing: 1px;
+    cursor: default;
+    text-indent: 10px;
+}
+
+.connection label {
+    /* Size and position */
+    width: 50%;
+    float: left;
+    padding-top: 9px;
+
+    /* Styles */
+    color: #ddd;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 0 #000;
+    text-indent: 10px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.connection h5 {
+    width: 100%;
+    padding-top: 8px;
+
+    color: #ddd;
+
+}
+
+.connection input[type=email],
+.connection input[type=password] {
+    /* Size and position */
+    width: 50%;
+    float: left;
+    padding: 8px 5px;
+    margin-bottom: 10px;
+    font-size: 12px;
+
+    /* Styles */
+    background: #1f2124; /* Fallback */
+    background: -moz-linear-gradient(#1f2124, #27292c);
+    background: -ms-linear-gradient(#1f2124, #27292c);
+    background: -o-linear-gradient(#1f2124, #27292c);
+  /*  background: -webkit-gradient(linear, 0 0, 0 100%, from(#1f2124), to(#27292c));*/
+    background: -webkit-linear-gradient(#1f2124, #27292c);
+    background: linear-gradient(#1f2124, #27292c);
+    border: 1px solid #000;
+    box-shadow:
+            0 1px 0 rgba(255,255,255,0.1);
+    border-radius: 3px;
+
+    /* Font styles */
+    font-family: 'Ubuntu', 'Lato', sans-serif;
+    color: #fff;
+
+}
+
+/* FIN DES REGLAGES DU BLOC CONNEXION */
+
+
+/* BLOCK NEW PRODUCT */
+.newProduct {
+    font-family: 'Ubuntu', 'Lato', sans-serif;
+    font-weight: 400;
+
+    /* Taille et position */
+    width: 30%;
+    margin: 10rem 40rem;
+    padding: 12px;
+    overflow: hidden;
+    display: inline-block;
+
+    /* Styles */
+    background-color: #111;
+    border-radius: 0.4em;
+    border: 1px solid #191919;
+    box-shadow:
+        inset 0 0 2px 1px rgba(255,255,255,0.08),
+        0 16px 10px -8px rgba(0,0,0,0.6);
+}
+
+.page-header {
+    width: 100%;
+    padding-top: 9px;
+    padding-bottom: 9px;
+
+    color: #ddd;
+    letter-spacing: 1px;
+    text-indent: 10px;
+    cursor: default;
+}
+
+.newProduct label{
+    /* Taille et position */
+    width: 50%;
+    float: left;
+    padding-top: 9px;
+
+    /* Styles */
+    color: #ddd;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 0 #000;
+    text-indent: 10px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.newProduct textarea{
+    min-height: 75px;
+    max-height: 150px;
+}
+
+.newProduct input[type=text],
+.newProduct input[type=file],
+.newProduct textarea{
+    /* Taille et position */
+    width: 50%;
+    float: left;
+    padding: 8px 5px;
+    margin-bottom: 10px;
+    font-size: 12px;
+
+    /* Styles */
+    background: #1f2124; /* Fallback */
+    background: -moz-linear-gradient(#1f2124, #27292c);
+    background: -ms-linear-gradient(#1f2124, #27292c);
+    background: -o-linear-gradient(#1f2124, #27292c);
+   /* background: -webkit-gradient(linear, 0 0, 0 100%, from(#1f2124), to(#27292c));*/
+    background: -webkit-linear-gradient(#1f2124, #27292c);
+    background: linear-gradient(#1f2124, #27292c);
+    border: 1px solid #000;
+    box-shadow:
+            0 1px 0 rgba(255,255,255,0.1);
+    border-radius: 3px;
+
+    /* Font styles */
+    font-family: 'Ubuntu', 'Lato', sans-serif;
+    color: #fff;
+}
+
+.newProduct input[type=submit] {
+    /* Width and position */
+    width: 50%;
+    padding: 8px 5px;
+    float: left;
+
+    /* Styles */
+    border: 1px solid #0273dd; /* Fallback */
+    border: 1px solid rgba(0,0,0,0.4);
+    box-shadow:
+            inset 0 1px 0 rgba(255,255,255,0.3),
+            inset 0 10px 10px rgba(255,255,255,0.1);
+    border-radius: 3px;
+    background: #38a6f0;
+    cursor:pointer;
+
+    /* Font styles */
+    font-family: 'Ubuntu', 'Lato', sans-serif;
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.8);
+}
