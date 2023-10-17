@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\PromotionRepository;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: PromotionRepository::class)]
@@ -13,41 +14,43 @@ class Promotion
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column]
-    private ?\DateTimeImmutable $dateDebut = null;
+    #[ORM\Column(type: Types::DATE_MUTABLE)]
+    private ?\DateTimeInterface $dateDebut = null;
 
-    #[ORM\Column]
-    private ?\DateTimeImmutable $dateFin = null;
+    #[ORM\Column(type: Types::DATE_MUTABLE)]
+    private ?\DateTimeInterface $dateFin = null;
 
     #[ORM\Column]
     private ?int $pourcentageRemise = null;
 
     #[ORM\OneToOne(inversedBy: 'promotion', cascade: ['persist', 'remove'])]
+    #[ORM\JoinColumn(nullable: false)]
     private ?Product $productID = null;
+
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getDateDebut(): ?\DateTimeImmutable
+    public function getDateDebut(): ?\DateTimeInterface
     {
         return $this->dateDebut;
     }
 
-    public function setDateDebut(\DateTimeImmutable $dateDebut): static
+    public function setDateDebut(\DateTimeInterface $dateDebut): static
     {
         $this->dateDebut = $dateDebut;
 
         return $this;
     }
 
-    public function getDateFin(): ?\DateTimeImmutable
+    public function getDateFin(): ?\DateTimeInterface
     {
         return $this->dateFin;
     }
 
-    public function setDateFin(\DateTimeImmutable $dateFin): static
+    public function setDateFin(\DateTimeInterface $dateFin): static
     {
         $this->dateFin = $dateFin;
 
@@ -71,7 +74,7 @@ class Promotion
         return $this->productID;
     }
 
-    public function setProductID(?Product $productID): static
+    public function setProductID(Product $productID): static
     {
         $this->productID = $productID;
 

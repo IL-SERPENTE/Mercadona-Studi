@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Appliquer promotion sur le produit{% endblock %}
+
+{% block body %}
+
+    <form method="post" class="newProduct">
+        <div class="clearfix">
+            <h1 class="page-header">Appliquer une promotion</h1>
+        </div>
+        <div class="clearfix">
+            <p class="page-header">Produit concerné par la promo : {{ prodcutName }}</p>
+        </div>
+        <div class="clearfix">
+            {{ form_label(form.dateDebut) }}
+            {{ form_widget(form.dateDebut) }}
+        </div>
+        <div class="clearfix">
+            {{ form_label(form.dateFin) }}
+            {{ form_widget(form.dateFin) }}
+        </div>
+        <div class="clearfix">
+            {{ form_label(form.pourcentageRemise) }}
+            {{ form_widget(form.pourcentageRemise) }}
+        </div>
+        <div class="clearfix">
+            {{ form_widget(form.productID) }}
+            {{ form_rest(form) }}
+            <button class="btn btn-lg btn-primary" type="submit">Appliquer Promotion</button>
+        </div>
+    </form>
+
+{% endblock %}

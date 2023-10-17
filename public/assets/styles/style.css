@@ -147,6 +147,8 @@ body {
 
 .newProduct input[type=text],
 .newProduct input[type=file],
+.newProduct input[type=number],
+.newProduct input[type=date],
 .newProduct textarea{
     /* Taille et position */
     width: 50%;
