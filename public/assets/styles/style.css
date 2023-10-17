@@ -7,6 +7,22 @@ body {
     font-weight: bold;
 }
 
+.prix {
+    width: auto;
+    float: left;
+}
+
+.category {
+    float: right;
+}
+
+.all-products {
+    padding-top: 75px;
+}
+
+.link-promo {
+    width: 100%;
+}
 /* DEBUT DES REGLAGES DU BLOC CONNECXION */
 
 .connection {

@@ -85,7 +85,7 @@ class NewProductType extends AbstractType
                 'choices' => [
                     'Selectionnez une catégorie' => '',
                     'Alimentation' => 'Alimentation',
-                    'Electronique' => 'Electronique',
+                    'Électronique' => 'Électronique',
                     'Vêtements et mode' => 'Vêtements et mode',
                     'Beauté et santé' => 'Beauté et santé',
                     'Sports et loisirs' => 'Sports et loisirs',

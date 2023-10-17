@@ -20,7 +20,7 @@ class HomeController extends AbstractController {
         ]);
     }
 
-    #[Route('catalog/{category}')]
+    #[Route('catalog/{category}', name: 'catalog')]
     public function catalogCategory(string $category) {
         $categoryCatalog = ['Alimentation', 'Électronique', 'Vêtements et mode', 'Beauté et santé', 'Sports et loisirs', 'Livres et papeterie'];
 

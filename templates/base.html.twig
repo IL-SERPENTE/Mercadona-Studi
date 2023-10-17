@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}{% endblock %}</title>
-        <link rel="icon" href="{{ asset('icon.ico') }}">
+        <link rel="icon" href="{{ asset('assets/icon.ico') }}">
         <!-- Bootstrap CSS -->
         <link href="{{ asset('assets/styles/bootstrap.min.css') }}" rel="stylesheet">
         <link href="{{ asset('assets/styles/style.css') }}" rel="stylesheet">
@@ -14,8 +14,7 @@
         {% block javascripts %}{% endblock %}
     </head>
     <body>
-    <div class="container-fluid">
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark navbar-scroll fixed-top">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark navbar-scroll fixed-top">
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menumercadona" aria-controls="menumercadona" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -29,12 +28,12 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false">Catégorie du catalog</a>
                         <ul class="dropdown-menu" aria-labelledby="dropdown03">
-                            <li><a class="dropdown-item" href="#">Alimentation</a></li>
-                            <li><a class="dropdown-item" href="#">Électronique</a></li>
-                            <li><a class="dropdown-item" href="#">Vêtements et mode</a></li>
-                            <li><a class="dropdown-item" href="#">Beauté et santé</a></li>
-                            <li><a class="dropdown-item" href="#">Sports et loisirs</a></li>
-                            <li><a class="dropdown-item" href="#">Livres et papeterie</a></li>
+                            <li><a class="dropdown-item" href="{{ path('catalog', {'category': 'Alimentation'}) }}">Alimentation</a></li>
+                            <li><a class="dropdown-item" href="{{ path('catalog', {'category': 'Électronique'}) }}">Électronique</a></li>
+                            <li><a class="dropdown-item" href="{{ path('catalog', {'category': 'Vêtements et mode'}) }}">Vêtements et mode</a></li>
+                            <li><a class="dropdown-item" href="{{ path('catalog', {'category': 'Beauté et santé'}) }}">Beauté et santé</a></li>
+                            <li><a class="dropdown-item" href="{{ path('catalog', {'category': 'Sports et loisirs'}) }}">Sports et loisirs</a></li>
+                            <li><a class="dropdown-item" href="{{ path('catalog', {'category': 'Livres et papeterie'}) }}">Livres et papeterie</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -56,17 +55,28 @@
                     {% endif %}
                 </ul>
             </div>
-
-
         </nav>
 
-        {% block body %}{% endblock %}
+        <div class="container-fluid">
+            {% block body %}{% endblock %}
         </div>
 
+        <footer class="bg-dark text-center text-white">
+            <div class="container p-4">
+                <section class="mb-4">
+                    <p>Mercadona est une entreprise du secteur du retail avec 1675 magasins en Espagne et un chiffre d'affaires de 20 milliards d'euros.</p>
+                    <p>Notre engagement envers le développement durable nous amène à remplacer nos tracts publicitaires par cette application web, développée en collaboration avec PromoWeb.</p>
+                </section>
+            </div>
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                Projet fin d'étude Studi <br>
+                Tous droits réservés © 2023 <a class="text-white nav-link" href="{{ path('home') }}">Mercadona</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+
         {% block scripts %}
-            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-            <script src="{{ asset('assets/js/jquery-3.7.1.slim.min.js') }}"></script>
-            <script src="{{ asset('assets/js/popper.min.js') }}"></script>
             <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
         {% endblock %}
     </body>
