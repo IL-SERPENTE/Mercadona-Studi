@@ -29,6 +29,9 @@ class NewProductType extends AbstractType
                         'message' => 'Ce champ ne peut être vide',
                     ])
                 ],
+                'attr' => [
+                    'placeholder' => 'Nom du produit'
+                ]
             ])
 
             // Description du produit
@@ -39,6 +42,9 @@ class NewProductType extends AbstractType
                         'message' => 'Ce champ ne peut être vide',
                     ])
                 ],
+                'attr' => [
+                    'placeholder' => 'Description du produit...'
+                ]
             ])
 
             // Prix du produit
@@ -50,6 +56,9 @@ class NewProductType extends AbstractType
                     ])
 
                 ],
+                'attr' => [
+                    'placeholder' => 'Prix du produit'
+                ]
             ])
 
             // Ajout d'une image pour le produit
@@ -71,7 +80,10 @@ class NewProductType extends AbstractType
 
             // Categorie du produit
             ->add('categorie', TextType::class, [
-                'label' => 'Catégorie du produit : '
+                'label' => 'Catégorie du produit : ',
+                'attr' => [
+                    'type' => 'select'
+                ]
             ])
         ;
     }
