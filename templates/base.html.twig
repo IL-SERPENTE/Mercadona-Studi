@@ -14,9 +14,47 @@
         {% block javascripts %}{% endblock %}
     </head>
     <body>
-        <nav class="navbar navbar-expend-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="{{ path('home') }}">Accueil</a>
-            {% if app.user %}
+    <div class="container-fluid">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark navbar-scroll fixed-top">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menumercadona" aria-controls="menumercadona" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menumercadona">
+                <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{{ path('home') }}">Mercadona</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false">Catégorie du catalog</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown03">
+                            <li><a class="dropdown-item" href="#">Alimentation</a></li>
+                            <li><a class="dropdown-item" href="#">Électronique</a></li>
+                            <li><a class="dropdown-item" href="#">Vêtements et mode</a></li>
+                            <li><a class="dropdown-item" href="#">Beauté et santé</a></li>
+                            <li><a class="dropdown-item" href="#">Sports et loisirs</a></li>
+                            <li><a class="dropdown-item" href="#">Livres et papeterie</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                    {% if app.user %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('new_product') }}">Ajouter un produit</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('app_login') }}">Connexion Admin</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+
+            {# }% if app.user %}
                 <!--li class="nav-item"-->
                 <span class="navbar-brand">Bienvenue {{ app.user.surname }} {{ app.user.name }}</span>
                 <!--/li-->
@@ -33,10 +71,9 @@
                     </li>
                     {% endif %}
                 </ul>
-            </div>
+            </div>#}
         </nav>
 
-        <div class="container-fluid">
         {% block body %}{% endblock %}
         </div>
 
