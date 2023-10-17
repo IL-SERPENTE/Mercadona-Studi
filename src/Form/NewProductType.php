@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Product;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -79,10 +80,16 @@ class NewProductType extends AbstractType
             ])
 
             // Categorie du produit
-            ->add('categorie', TextType::class, [
+            ->add('categorie', ChoiceType::class, [
                 'label' => 'Catégorie du produit : ',
-                'attr' => [
-                    'type' => 'select'
+                'choices' => [
+                    'Selectionnez une catégorie' => '',
+                    'Alimentation' => 'Alimentation',
+                    'Electronique' => 'Electronique',
+                    'Vêtements et mode' => 'Vêtements et mode',
+                    'Beauté et santé' => 'Beauté et santé',
+                    'Sports et loisirs' => 'Sports et loisirs',
+                    'Livres et papeterie' => 'Livres et papeterie'
                 ]
             ])
         ;
