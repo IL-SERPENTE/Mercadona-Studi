@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion Administrateur{% endblock %}
+
+{% block body %}
+    <form method="post" class="connection">
+        {% if error %}
+            <div class="clearfix alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+        <div class="clearfix">
+            <h1 class="mb-3 font-weight-normal header-page">Connexion</h1>
+        </div>
+        <div class="clearfix">
+            <label for="inputEmail">NOM D'UTILISATEUR</label>
+            <input type="text" value="{{ last_useradmin }}" name="mail" id="inputEmail" class="form-control" autocomplete="mail" required autofocus placeholder="Email">
+        </div>
+        <div class="clearfix">
+            <label for="inputPassword">Mot de passe</label>
+            <input type="password" name="password" id="inputPassword" class="form-control" required placeholder="Mot de passe">
+        </div>
+        <div class="clearfix">
+            <button class="btn btn-lg btn-primary" type="submit">Connexion</button>
+        </div>
+    </form>
+{% endblock %}
