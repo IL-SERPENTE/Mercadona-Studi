@@ -49,6 +49,9 @@ workers:
 
 mounts:
     "/var": { source: local, source_path: var }
+    '/public/assets/image_product':
+        source: local
+        source_path: uploads
     
 
 hooks:
