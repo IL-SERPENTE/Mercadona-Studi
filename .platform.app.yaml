@@ -1,3 +1,4 @@
+# The name of this app. Must be unique within a project.
 name: app
 
 type: php:8.2
@@ -25,7 +26,8 @@ relationships:
 build:
     flavor: none
 
-disk: 512
+# The size of the persistent disk of the application (in MB).
+disk: 2048
 
 web:
     locations:
@@ -47,6 +49,11 @@ workers:
             # Don't forget to update your receiver name(s)
             start: symfony console --time-limit=3600 --memory-limit=64M messenger:consume async
 
+# The following block defines a single writable directory, 'web/uploads'
+# The 'source' specifies where the writable mount is. The 'local' source
+# indicates that the mount point will point to a local directory on the
+# application container. The 'source_path' specifies the subdirectory
+# from within the source that the mount should point at.
 mounts:
     "/var": { source: local, source_path: var }
     '/public/assets/image_product':
