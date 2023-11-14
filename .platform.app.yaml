@@ -27,7 +27,7 @@ build:
     flavor: none
 
 # The size of the persistent disk of the application (in MB).
-disk: 2048
+disk: 512
 
 web:
     locations:
