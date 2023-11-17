@@ -104,10 +104,4 @@ class ProductController extends AbstractController
 
         return $this->render('product/setPromotion.html.twig', $parameters);
     }
-
-    // Modification d'un produit et enrengistrement des changement en BDD
-    #[Route('/admin/product/{id}', name:'update_product', methods: ['GET', 'POST'])]
-    public function updateProduct(Request $request, int $id) {
-
-    }
 }
