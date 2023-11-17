@@ -7,5 +7,4 @@
 /var/
 /vendor/
 /.idea/Mercadona.iml
-/tests/
 ###< symfony/framework-bundle ###
