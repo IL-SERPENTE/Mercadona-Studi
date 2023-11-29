@@ -4,17 +4,14 @@ namespace App\Controller;
 
 use App\Entity\Promotion;
 use App\Form\NewPromotionType;
-use Doctrine\DBAL\Driver\Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 use App\Entity\Product;
 use App\Form\NewProductType;
-use App\Form\UpdateProductType;
 use Symfony\Component\String\Slugger\SluggerInterface;
 
 class ProductController extends AbstractController
