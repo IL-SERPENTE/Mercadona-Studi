@@ -14,10 +14,11 @@ class PromotionTest extends TestCase
     public function testGetSpecPromotion_WithProvider($productID, $startingDate, $endingDate, $remise)
     {
         $promotion = new Promotion();
-        $promotion->setProductID($productID);
-        $promotion->setDateDebut($startingDate);
-        $promotion->setDateFin($endingDate);
-        $promotion->setPourcentageRemise($remise);
+        $promotion
+            ->setProductID($productID)
+            ->setDateDebut($startingDate)
+            ->setDateFin($endingDate)
+            ->setPourcentageRemise($remise);
 
         $this->assertSame($productID, $promotion->getProductID());
         $this->assertSame($startingDate, $promotion->getDateDebut());
