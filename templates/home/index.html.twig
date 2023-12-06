@@ -12,8 +12,8 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ product.libelle }}</h5>
                         <p class="card-text">{{ product.description|nl2br }}</p>
-                        {% if product.promotion and ("now"|date('d-m-Y') >= product.promotion.dateDebut|date('d-m-Y') and
-                        "now"|date('d-m-Y') <= product.promotion.dateFin|date('d-m-Y')) %}
+                        {% if product.promotion and ("now"|date('U') >= product.promotion.dateDebut|date('U') and
+                        "now"|date('U') <= product.promotion.dateFin|date('U')) %}
                         <p class="card-text promo prix">{{ (product.prix-(product.prix*product.promotion.pourcentageRemise/100))|number_format(2, '.') }} €</p>
                         {% else %}
                         <p class="card-text prix">{{ product.prix|number_format(2, '.') }} €</p>
