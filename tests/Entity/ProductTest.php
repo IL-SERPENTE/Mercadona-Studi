@@ -12,8 +12,7 @@ class ProductTest extends TestCase {
      * @dataProvider productSpec_DataProvider
      */
     public function testGetSpecification_WithProvider($libelle, $desc, $image, $prix, $category) {
-        $product = new Product();
-        $product
+        $product = (new Product())
             ->setLibelle($libelle)
             ->setDescription($desc)
             ->setImage($image)
@@ -31,8 +30,7 @@ class ProductTest extends TestCase {
     {
         $promotion = $this->createMock(Promotion::class);
 
-        $product = new Product();
-        $product
+        $product = (new Product())
             ->setLibelle("PC Portable")
             ->setDescription("PC conçus pour le jeux")
             ->setPrix(1999.99)

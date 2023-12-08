@@ -13,8 +13,7 @@ class PromotionTest extends TestCase
      */
     public function testGetSpecPromotion_WithProvider($productID, $startingDate, $endingDate, $remise)
     {
-        $promotion = new Promotion();
-        $promotion
+        $promotion = (new Promotion())
             ->setProductID($productID)
             ->setDateDebut($startingDate)
             ->setDateFin($endingDate)
