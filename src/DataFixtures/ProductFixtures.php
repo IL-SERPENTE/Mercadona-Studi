@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Admin;
 use App\Entity\Product;
 use App\Entity\Promotion;
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -56,6 +57,14 @@ class ProductFixtures extends Fixture
             ->setPourcentageRemise(10)
             ->setProductID($product4);
         $manager->persist($promoProduct4);
+
+        $adminUser = (new Admin())
+            ->setSurname("Kévin")
+            ->setName("PERQUY")
+            ->setUseradmin("AdminUser")
+            ->setPassword("MotDeP@sseExemple25")
+            ->setRoles(["ROLE"=>"ROLE_ADMIN"]);
+        $manager->persist($adminUser);
 
         $manager->flush();
     }
